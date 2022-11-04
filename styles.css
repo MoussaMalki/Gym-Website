@@ -1,0 +1,692 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;1,700&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-padding-top: 2rem; 
+    scroll-behavior: smooth;
+    list-style: none;
+    text-decoration: none;
+   
+}
+
+:root { 
+    --main-color: #4100A4;
+    --second-color: #E6BD29;
+    --text-color: #1b1b1b;
+    --gradient: linear-gradient(#4100A4,#E6BD29 );
+ } 
+
+/* Custom scroll bar */
+
+html::-webkit-scrollbar {
+   width: 0.5rem;
+}
+html::-webkit-scrollbar-track {
+   background: transparent;
+}
+html::-webkit-scrollbar-thumb {
+   background: var(--main-color);
+   border-radius: 5rem;
+}
+
+/* ===========================================> I - Header <============================================*/
+
+header {
+    height: 5rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 2vh 2vw;
+}
+
+.profile-pic {
+    display: flex;
+    align-items: center;
+    margin-top: 1vh;
+}
+.profile-pic img {
+    width: 100%;
+    max-width: 150px;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: center;
+}
+.nav-bar div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 1vw;
+    cursor: pointer;
+}
+.nav-bar div:hover {
+    color: var(--main-color);
+    transition: 0.7s ease;
+    filter: drop-shadow(0 0 20px var(--main-color));
+}
+.nav-bar i {
+    font-size: 1.6rem;
+}
+.nav-bar a {
+    color: var(--text-color);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+.singing-buttons {
+    margin-top: 1vh;
+}
+#signUp {
+    color: #fff;
+    font-size: clamp(0.8rem, 1.2vw, 0.9rem);
+    font-weight: 500;
+    background-color: var(--main-color);
+    padding:  8px 26px;
+    border-radius: 5px;
+    filter: drop-shadow(0 0 10px var(--main-color));
+}
+#signUp:hover {
+    transition: 0.7s ease;
+    filter: drop-shadow(0 0 2px var(--main-color));
+}
+
+#LogOut {
+    color: #fff;
+    font-size: clamp(0.8rem, 1.2vw, 0.9rem);
+    font-weight: 500;
+    background-color: #E14D2A;
+    padding:  8px 26px;
+    border-radius: 5px;
+   
+}
+#LogOut:hover {
+    transition: 0.7s ease;
+    filter: drop-shadow(0 0 10px red);
+}
+
+#logIn {
+    color: var(--text-color);
+    font-size: clamp(0.8rem, 1.2vw, 0.9rem);
+    font-weight: 500;
+    padding:  8px 26px;
+    border-radius: 5px;
+}
+#logIn:hover {
+    transition: 0.7s ease;
+    color: var(--main-color);
+}
+
+/* ===========================================> II - Home <============================================*/
+
+#Home {
+    min-height: 60vh;
+    display: flex;
+    justify-content: center;
+    padding: 15vh 7vw;
+    position: relative;
+    flex-wrap: wrap-reverse;
+}
+.home-text {
+    display: flex;
+    flex-direction: column;
+    margin: 5vh 2vw;
+}
+.home-text h1{
+    font-size: clamp(3rem, 3vw, 3rem);
+    color: var(--text-color);
+}
+.home-text span {
+    color: var(--main-color);
+}
+.home-img img{
+    width: 100%;
+    width:clamp(30rem, 30vw, 30rem);
+}
+.home-img {
+    overflow: hidden;
+    margin: 0 2vw;
+}
+.home-button a{
+    color: var(--text-color);
+    font-size: 0.9rem;
+    font-weight: 500;
+    background-color: var(--second-color);
+    padding: 8px 20px;
+    border-radius: 5px;
+    filter: drop-shadow(0 0 20px var(--second-color));
+}
+.home-button a:hover {
+    transition: 0.7s ease;
+    filter: drop-shadow(0 0 2px var(--second-color));
+}
+.social-icons a {
+    color: var(--text-color);
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: underline;
+    padding: 2px 0;
+}
+.social-icons a:hover {
+    transition: 0.7s ease;
+    color: var(--main-color);
+}
+.home-button {
+    margin-top:3vh;
+}
+.social-icons {
+    margin: 3vh 2vw;
+    display: flex;
+    flex-direction: row;
+}
+
+.buttonIconContainter {
+    display: flex;
+    flex-direction: row;
+}
+hr{
+    width: 30vw;  
+    border: none;
+    border-top: 4px solid var(--main-color);
+    border-radius: 15px;
+    margin: auto;
+}
+.singing-buttons2 {
+    margin-top: 1vh;
+}
+/* ===========================================> III - Services <============================================*/
+
+#Services {
+    min-height: 60vh;
+    padding: 5vh 0;
+}
+.title {
+    font-size: clamp(2rem, 2.8vw, 3rem);
+    counter-reset: var(--text-color);
+    text-align: center;
+}
+.title span {
+    color: var(--main-color);
+}
+.cards {
+    margin: 5vh 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.firstPlan, .secondPlan, .thirdPlan {
+    margin: 2vh 2vw;
+    background-color: #fff;
+    height: 30rem;
+    width: 20rem;
+    border: #1b1b1b 2px solid;
+    border-radius: 5px;
+}
+.plan-info {
+    margin: 1vh 1vw;
+    background-color: #fff;
+    height: 30rem;
+    width: 20rem;
+    border: #1b1b1b 2px solid;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    padding: 2vh 1rem;
+}
+.plan-info i {
+    font-size: 2.4rem;
+    color: var(--main-color);
+    margin-bottom: 1rem;
+}
+.plan-info h3 {
+    color: var(--second-color);
+    margin-bottom: 1rem;
+}
+.price {
+    margin-bottom: 0.5rem;
+}
+.price span{
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    color: var(--main-color);
+}
+.offers {
+    margin-bottom: 4vh;
+}
+.offers div{
+    display: flex;
+    flex-direction: row;
+}
+.offers i {
+    padding-top: 0.1rem;
+    font-size: 2rem;
+}
+.offers span {
+    padding-top: 0.3rem;
+    padding-left: 0.5rem;
+    font-weight: 500;
+}
+.xBtn i {
+    color: red;
+}
+.subBtn {
+    color: var(--text-color);
+    font-size: 0.9rem;
+    font-weight: 500;
+    background-color: var(--second-color);
+    padding: 8px 20px;
+    border-radius: 5px;
+    filter: drop-shadow(0 0 20px var(--second-color));
+    text-align: center;
+}
+.subBtn:hover {
+    transition: 0.7s ease;
+    filter: drop-shadow(0 0 2px var(--second-color));
+}
+.scrollBack {
+    font-size:  2rem;
+    display: none;
+    position: fixed; /* Fixed/sticky position */
+    bottom: 80px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    animation: float 2s ease-in-out infinite;
+}
+
+/* ===========================================> IV - Contact <============================================*/
+#Contact {
+    min-height: 60vh;
+    padding: 5vh 0;
+}
+.imgFormContainer {
+   
+    display: flex;
+    justify-content: center;    
+    padding: 10vh 0;
+    position: relative;
+    flex-wrap: wrap;
+}
+#contactForm {
+    margin: 2vh 2vw;
+}
+#contactForm textarea{
+    width: 21.8rem;
+    height: 4rem;
+    border-radius: 5px;
+    border: 1px solid RGB(188, 188, 188);
+    outline-color:  var(--main-color);
+    margin-bottom: 1rem;
+    padding: 20px 10px;
+    resize: none;
+}
+#Contact img{
+    width: 100%;
+    width:clamp(30rem, 30vw, 30rem);
+    margin: 2vh 2vw;
+}
+/* ===========================================> V - Footer <============================================*/
+
+footer {
+    min-height: 15vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+   justify-content: space-evenly;
+    padding: 1vw 0;
+    text-align: center;
+    color: var(--text-color);
+}
+footer a {
+  font-weight: 600;
+  color: var(--main-color);
+}
+footer i {
+    font-size: 1.8rem;
+}
+footer i:hover {
+    filter: drop-shadow(0 0 20px var(--main-color));
+}
+
+/* ===========================================> VI - Sign Up Page <============================================*/
+
+#logIn2 {
+    color: #fff;
+    font-size: clamp(0.8rem, 1.2vw, 0.9rem);
+    font-weight: 500;
+    background-color: var(--main-color);
+    padding:  8px 30px;
+    border-radius: 5px;
+    filter: drop-shadow(0 0 10px var(--main-color));
+}
+#logIn2:hover {
+    transition: 0.7s ease;
+    filter: drop-shadow(0 0 2px var(--main-color));
+}
+#signUp2 {
+    color: var(--text-color);
+    font-size: clamp(0.8rem, 1.2vw, 0.9rem);
+    font-weight: 500;
+    padding:  8px 26px;
+    border-radius: 5px;
+}
+#signUp2:hover {
+    transition: 0.7s ease;
+    color: var(--main-color);
+}
+#SignUp {
+    min-height: 60vh;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10vh 7vw;
+  
+}
+.signUp-pic, .signUpForm {
+    margin: 2vh 2vw;
+}
+.signUp-pic img{
+    margin-top: 5vh;
+    width: 100%;
+    max-width: 30rem;
+}
+#signForm, #contactForm {
+    display: flex;
+    flex-direction: column;
+}
+.signUpForm h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+.signUpForm h4 {
+    font-weight: 400;
+    color: #3C4048;
+    margin-bottom: 2rem;
+}
+.signUpForm span {
+    color: var(--main-color);
+    font-weight: 600;
+}
+#signForm input, #contactForm input {
+    width: 21.8rem;
+    height: 3rem;
+    border-radius: 5px;
+    border: 1px solid RGB(188, 188, 188);
+    outline-color:  var(--main-color);
+    margin-bottom: 1rem;
+    padding: 0 10px;
+}
+#createAcc,#logToAcc, #sendBtn, #contactForm a {
+    border: none;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+    padding: 0.8rem 0;
+    text-align: center;
+    font-weight: 500;
+    border-radius: 5px ;
+    height: 3rem;
+    width: 21.8rem;
+    background-color: var(--main-color);
+    color: #fff;
+    filter: drop-shadow(0 0 10px var(--main-color));
+    cursor: pointer;
+}
+#createAcc:hover,#sendBtn:hover, #logToAcc:hover {
+    filter: drop-shadow(0 0 2px var(--main-color));
+    transition: 0.7s ease;
+}
+#createAccGoogle {
+    vertical-align: middle;
+    text-align: center;
+    font-size: 0.9rem;
+    padding: 0.8rem 0;
+    font-weight: 500;
+    border-radius: 5px;
+    height: 3rem;
+    width: 21.8rem;
+    color: var(--text-color);
+    border: 1px solid RGB(188, 188, 188);
+    position: relative;
+    cursor: pointer;
+}
+#createAccGoogle:hover{
+    border-color: var(--main-color);
+    transition: 0.7s ease;
+}
+#createAccGoogle i {
+    font-size: 1.5rem;
+    position: absolute;
+    top: 0.7rem;
+    left: 4.6rem;
+}
+input:invalid {
+    animation: vibrate 300ms;
+    color: red;
+}
+@keyframes vibrate {
+    25%{transform: translateX(-5px);}
+    50%{transform: translateX(5px);}
+    75%{transform: translateX(-5px);}
+}
+
+.nameContainer, .msgContainer, .emailContainer, .passContainer{
+    position: relative;
+    width: 21.8rem;
+}
+.emailContainer i, .nameContainer i,.passContainer i,.msgContainer i{
+    position: absolute;
+    top: 40%;
+    transform: translate(0, -60%);
+    right: 5%;
+    font-size: 1.3rem;
+    color: #3C4048;
+    
+}
+
+/* ===========================================> VII - Sign In Page <============================================*/
+
+#LoginIn {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    padding: 15vh 7vw;
+}
+@keyframes float {
+    0% {
+	
+		transform: translatey(0px);
+	}
+	50% {
+		
+		transform: translatey(-20px);
+	}
+	100% {
+		
+		transform: translatey(0px);
+	}
+}
+@keyframes float2 {
+    0% {
+	
+		transform: translatex(0px);
+	}
+	50% {
+		
+		transform: translatex(-20px);
+	}
+	100% {
+		
+		transform: translatex(0px);
+	}
+}
+#goBackHome i{
+    position: absolute;
+    bottom: 2vh;
+    right: 5vw;
+    font-size: 2.5rem;
+    z-index: 99; /* Make sure it does not overlap */
+    animation: float2 2s ease-in-out infinite;
+}
+
+
+/* ===========================================> VIII - Devices Responsive <============================================*/
+
+@media (max-width: 1010px){
+    #Home {
+        min-height: 60vh;
+        display: flex;
+        justify-content: center;
+        padding: 10vh 7vw;
+        position: relative;
+        flex-wrap: wrap-reverse;
+    }
+    .home-text {
+        display: flex;
+        margin-top: 5vh;
+        justify-content: center;
+        align-items: center;
+    }
+    .home-text h1 {
+        text-align: center;
+
+    }
+    #SignUp {
+        display: flex;
+        justify-content: center;
+    }
+
+    .signUp-pic img{
+    display: none;
+    }
+   
+}
+@media (max-width:740px) {
+    header {
+        padding: 2vh 1vw;
+    }
+    .profile-pic {
+        margin-top: 2vh;
+    }
+    .nav-bar {
+       display: none;
+    }
+    .nav-bar div {
+        margin: 0.5rem 0;
+    }
+    .singing-buttons {
+        margin-top: 2vh;
+    }
+    .singing-buttons2 {
+        margin-top: 2vh;
+    }
+    .home-img img{
+        width: 100%;
+        width:clamp(21rem, 30vw, 30rem);
+    }
+    .home-text h1{
+        font-size: clamp(2.5rem, 3vw, 3rem);
+    }
+    .buttonIconContainter {
+        display: flex;
+        flex-direction: column;
+    }
+    .imgFormContainer img {
+        display: none;
+    }
+    #follow-us {
+    
+        padding: 8px 20px;
+        border-radius: 5px;
+    }
+    @media (max-width:372px) {
+        .singing-buttons {
+         margin-top: -0.3rem;
+         display: flex;
+         flex-direction: column;
+        }
+        .singing-buttons2 {
+        margin-top: 4rem;
+        display: flex;
+        flex-direction: column-reverse;
+        }
+      
+    }
+}
+
+@keyframes configure-clockwise {
+    0% {
+      transform: rotate(0);
+    }
+    25% {
+      transform: rotate(90deg);
+    }
+    50% {
+      transform: rotate(180deg);
+    }
+    75% {
+      transform: rotate(270deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes configure-xclockwise {
+    0% {
+      transform: rotate(45deg);
+    }
+    25% {
+      transform: rotate(-45deg);
+    }
+    50% {
+      transform: rotate(-135deg);
+    }
+    75% {
+      transform: rotate(-225deg);
+    }
+    100% {
+      transform: rotate(-315deg);
+    }
+  }
+.configure-border-1 {
+    width: 115px;
+    height: 115px;
+    padding: 3px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--second-color);
+    animation: configure-clockwise 3s ease-in-out 0s infinite alternate;
+  }
+  
+  .configure-border-2 {
+    width: 115px;
+    height: 115px;
+    padding: 3px;
+    left: -115px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--main-color);
+    transform: rotate(45deg);
+    animation: configure-xclockwise 3s ease-in-out 0s infinite alternate;
+  }
+  
+  .configure-core {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+
+  }
+  .spinner-box {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+  }
+  
+   
+
+ 

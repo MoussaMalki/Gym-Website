@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FITNESS | LOG IN</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="fav/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="fav/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="fav/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
+  </head>
+  <header>
+    <div class="profile-pic">
+      <a href="/index.html"
+        ><img src="images/local gym.png" alt="user profile pic, male version"
+      /></a>
+    </div>
+
+    <div class="singing-buttons">
+      <a href="/signup.html" id="signUp">Sign Up</a>
+      <a href="#LoginIn" id="logIn">Log In</a>
+    </div>
+  </header>
+  <body>
+    <section id="LoginIn">
+      <div class="signUpForm">
+        <h1>Log in to Fitness.</h1>
+        <h4>
+          Not a member? <span><a href="/signup.html">Sign Up</a></span>
+        </h4>
+        <form action="" id="signForm">
+          <label for="">E-mail</label>
+          <div class="emailContainer">
+            <input
+              type="text"
+              placeholder="name@gmail.com"
+              id="email2"
+              name="email"
+              pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+              required
+            />
+            <i class="bx bx-envelope"></i>
+          </div>
+          <label for="">Password</label>
+          <div class="passContainer">
+            <input
+              type="password"
+              id="password2"
+              name="password"
+              placeholder="6+ Characters, 1+ Special Characters"
+              pattern="([_@./#&+-])?\w+[_@./#&+-]([_@./#&+-]?\w*)*"
+              required
+            />
+            <i class="bx bx-lock-alt"></i>
+          </div>
+          <a id="logToAcc">Log in</a>
+          <a id="createAccGoogle"
+            ><span><i class="bx bxl-google"></i></span> Log in with Google</a
+          >
+        </form>
+      </div>
+      <a href="/index.html" id="goBackHome">
+        <i class="bx bx-chevrons-left"></i
+      ></a>
+    </section>
+    <div class="spinner-box" style="display: none">
+      <div class="configure-border-1">
+        <div class="configure-core"></div>
+      </div>
+      <div class="configure-border-2">
+        <div class="configure-core"></div>
+      </div>
+    </div>
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
+      import {
+        getDatabase,
+        set,
+        ref,
+        update,
+      } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-database.js";
+      import {
+        getAuth,
+        createUserWithEmailAndPassword,
+        signInWithEmailAndPassword,
+        onAuthStateChanged,
+        signOut,
+        GoogleAuthProvider,
+        signInWithRedirect,
+        getRedirectResult,
+      } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js";
+
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyAnloWvguJGqz_uS_jvVbyP0EWW1PRvQ6o",
+        authDomain: "gym-website-3eee9.firebaseapp.com",
+        databaseURL: "https://gym-website-3eee9-default-rtdb.firebaseio.com",
+        projectId: "gym-website-3eee9",
+        storageBucket: "gym-website-3eee9.appspot.com",
+        messagingSenderId: "339148692540",
+        appId: "1:339148692540:web:566fca920e0dcf4b7a3739",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const database = getDatabase(app);
+      const auth = getAuth(app);
+      const provider = new GoogleAuthProvider(app);
+
+      let logIn = document.querySelector(`#logToAcc`);
+      let logWithGoogle = document.querySelector(`#createAccGoogle`);
+
+      logWithGoogle.addEventListener(`click`, (e) => {
+        signInWithRedirect(auth, provider);
+        getRedirectResult(auth)
+          .then((result) => {
+            // This gives you a Google Access Token. You can use it to access Google APIs.
+            const credential = GoogleAuthProvider.credentialFromResult(result);
+            const token = credential.accessToken;
+
+            // The signed-in user info.
+            const user = result.user;
+          })
+          .catch((error) => {
+            // Handle Errors here.
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            // The email of the user's account used.
+            const email = error.customData.email;
+            // The AuthCredential type that was used.
+            const credential = GoogleAuthProvider.credentialFromError(error);
+            // ...
+          });
+      });
+
+      const user = auth.currentUser;
+      onAuthStateChanged(auth, (user) => {
+        if (user) {
+          // User is signed in, see docs for a list of available properties
+          // https://firebase.google.com/docs/reference/js/firebase.User
+          const uid = user.uid;
+          const displayName = user.displayName;
+          //bla bla bla
+          // ...
+
+          doc.querySelector(`.spinner-box`).style.display = "initial";
+
+          setTimeout(() => {
+            window.location.href = `/index.html`;
+
+            doc.querySelector(`.spinner-box`).style.display = "none";
+          }, 2000);
+        } else {
+          // User is signed out
+          // ...
+          //bla bla bla
+        }
+      });
+
+      logIn.addEventListener("click", (e) => {
+        var email = document.getElementById("email2").value;
+        var password = document.getElementById("password2").value;
+
+        signInWithEmailAndPassword(auth, email, password)
+          .then((userCredential) => {
+            // Signed in
+            const user = userCredential.user;
+
+            const dt = new Date();
+            update(ref(database, "users/" + user.uid), {
+              last_login: dt,
+            });
+
+            doc.querySelector(`.spinner-box`).style.display = "initial";
+            setTimeout(() => {
+              window.location.href = `/index.html`;
+              doc.querySelector(`.spinner-box`).style.display = "none";
+            }, 2000);
+            // ...
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+
+            alert(errorMessage);
+          });
+      });
+    </script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light only" />
+    <title>FITNESS | LOCAL GYM</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="fav/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="fav/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="fav/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
+  </head>
+  <body>
+    <header id="head">
+      <div class="profile-pic">
+        <a href="#Home"
+          ><img src="images/local gym.png" alt="user profile pic, male version"
+        /></a>
+      </div>
+      <div class="nav-bar">
+        <div id="nav-home">
+          <i class="bx bx-home-alt"></i>
+          <a href="#Home">Home</a>
+        </div>
+        <div id="nav-services">
+          <i class="bx bx-cart-add"></i>
+          <a href="#Services">Services</a>
+        </div>
+        <div id="nav-contact">
+          <i class="bx bx-support"></i>
+          <a href="#Contact">Contact</a>
+        </div>
+      </div>
+      <div class="singing-buttons">
+        <a href="/index.html" id="LogOut" style="display: none">Log Out</a>
+        <a href="/signup.html" id="signUp">Sign Up</a>
+        <a href="/login.html" id="logIn">Log In</a>
+      </div>
+    </header>
+
+    <section id="Home">
+      <div class="home-text">
+        <h1>
+          Get the Best <br /><span> Workout</span><br />
+          at the Best
+          <span>Gym</span>
+        </h1>
+        <div class="buttonIconContainter">
+          <div class="home-button">
+            <a href="#Services">Get Started </a>
+          </div>
+          <div class="social-icons">
+            <a href="https://twitter.com/MalkiRave" id="follow-us"
+              >Follow Us
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="home-img">
+        <img src="images/gymPic1.png" alt="" />
+      </div>
+    </section>
+    <hr />
+    <section id="Services">
+      <h1 class="title"><span>Choose</span> your plan</h1>
+      <div class="cards">
+        <div class="firstPlan">
+          <div class="plan-info">
+            <i class="bx bx-dumbbell"></i>
+            <h2 class="price">30$ <span>/MONTH</span></h2>
+            <h3>BASIC PLAN</h3>
+            <div class="offers">
+              <div>
+                <i class="bx bx-check-circle"></i> <span>Open gym</span>
+              </div>
+              <div><i class="bx bx-check-circle"></i> <span>Shower</span></div>
+              <div class="xBtn">
+                <i class="bx bx-x-circle"></i> <span>Soccer court</span>
+              </div>
+              <div class="xBtn">
+                <i class="bx bx-x-circle"></i> <span>Personal trainer</span>
+              </div>
+            </div>
+            <a href="" class="subBtn">Subscribe</a>
+          </div>
+        </div>
+
+        <div class="secondPlan">
+          <div class="plan-info">
+            <i class="bx bx-dumbbell"></i>
+            <h2 class="price">100$ <span>/MONTH</span></h2>
+            <h3>STANDARD PLAN</h3>
+            <div class="offers">
+              <div>
+                <i class="bx bx-check-circle"></i> <span>Open gym</span>
+              </div>
+              <div><i class="bx bx-check-circle"></i> <span>Shower</span></div>
+              <div>
+                <i class="bx bx-check-circle"></i> <span>Soccer court</span>
+              </div>
+              <div class="xBtn">
+                <i class="bx bx-x-circle"></i>
+                <span>Personal trainer</span>
+              </div>
+            </div>
+            <a href="" class="subBtn">Subscribe</a>
+          </div>
+        </div>
+
+        <div class="thirdPlan">
+          <div class="plan-info">
+            <i class="bx bx-dumbbell"></i>
+            <h2 class="price">250$ <span>/MONTH</span></h2>
+            <h3>PREMIUM PLAN</h3>
+            <div class="offers">
+              <div>
+                <i class="bx bx-check-circle"></i> <span>Open gym</span>
+              </div>
+              <div><i class="bx bx-check-circle"></i> <span>Shower</span></div>
+              <div>
+                <i class="bx bx-check-circle"></i> <span>Soccer court</span>
+              </div>
+              <div>
+                <i class="bx bx-check-circle"></i> <span>Personal trainer</span>
+              </div>
+            </div>
+            <a href="" class="subBtn">Subscribe</a>
+          </div>
+        </div>
+      </div>
+      <div class="scrollBack">
+        <a href="#head">
+          <i class="bx bxs-chevrons-up"></i>
+        </a>
+      </div>
+    </section>
+    <hr />
+    <section id="Contact">
+      <h1 class="title">Contact <span>Us</span></h1>
+
+      <div class="imgFormContainer">
+        <img src="images/personal-svg.png" alt="" />
+        <div class="form">
+          <form
+            action="https://formspree.io/f/xvoyvlwk"
+            method="POST"
+            id="contactForm"
+          >
+            <label for="">Name</label>
+            <div class="nameContainer">
+              <input
+                type="text"
+                placeholder="moussa malki"
+                name="name"
+                pattern="[a-z A-Z]+(([\d]*)?([a-z A-Z]*)?)*"
+                required
+              />
+              <i class="bx bx-user"></i>
+            </div>
+            <label for="">E-mail</label>
+            <div class="emailContainer">
+              <input
+                type="text"
+                placeholder="name@gmail.com"
+                name="email"
+                pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+                required
+              />
+              <i class="bx bx-envelope"></i>
+            </div>
+            <label for="">Message</label>
+            <div class="msgContainer">
+              <textarea
+                name="message"
+                placeholder="hello i would like to ask about.."
+                required
+              ></textarea>
+              <i class="bx bx-message-square-dots"></i>
+            </div>
+            <button type="submit" id="sendBtn">Send</button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <hr />
+    <footer>
+      <div class="footerIcons">
+        <a href="https://github.com/MoussaMalki"
+          ><i class="bx bxl-github"></i
+        ></a>
+        <a href="https://www.instagram.com/moussa_malki21/?hl=en">
+          <i class="bx bxl-instagram-alt"></i
+        ></a>
+        <a href="https://twitter.com/MalkiRave"
+          ><i class="bx bxl-twitter"></i
+        ></a>
+      </div>
+      <p>
+        Illustrations by
+        <a href="https://undraw.co/">Undraw</a>
+      </p>
+
+      <p class="copyRight">
+        Copyright ©2022
+        <a href="https://github.com/MoussaMalki"> Moussa Malki</a>
+      </p>
+    </footer>
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
+      import {
+        getDatabase,
+        set,
+        ref,
+        onValue,
+        update,
+      } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-database.js";
+      import {
+        getAuth,
+        createUserWithEmailAndPassword,
+        signInWithEmailAndPassword,
+        onAuthStateChanged,
+        signOut,
+      } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyAnloWvguJGqz_uS_jvVbyP0EWW1PRvQ6o",
+        authDomain: "gym-website-3eee9.firebaseapp.com",
+        databaseURL: "https://gym-website-3eee9-default-rtdb.firebaseio.com",
+        projectId: "gym-website-3eee9",
+        storageBucket: "gym-website-3eee9.appspot.com",
+        messagingSenderId: "339148692540",
+        appId: "1:339148692540:web:566fca920e0dcf4b7a3739",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const database = getDatabase(app);
+      const auth = getAuth();
+
+      const user = auth.currentUser;
+      onAuthStateChanged(auth, (user) => {
+        if (user) {
+          // User is signed in, see docs for a list of available properties
+          // https://firebase.google.com/docs/reference/js/firebase.User
+          const uid = user.uid;
+
+          //bla bla bla
+          // ...
+
+          document.querySelector(`#LogOut`).style = `display:initial`;
+          document.querySelector(`#signUp`).style = `display:none`;
+          document.querySelector(`#logIn`).style = `display:none`;
+        } else {
+          // User is signed out
+          // ...
+          //bla bla bla
+
+          document.querySelector(`#LogOut`).style = `display:none`;
+          document.querySelector(`#signUp`).style = `display:initial`;
+          document.querySelector(`#logIn`).style = `display:initial`;
+        }
+      });
+
+      let logout = doc.querySelector(`#LogOut`);
+
+      logout.addEventListener("click", (e) => {
+        signOut(auth)
+          .then(() => {
+            // Sign-out successful.
+          })
+          .catch((error) => {
+            // An error happened.
+            const errorCode = error.code;
+            const errorMessage = error.message;
+
+            alert(errorMessage);
+          });
+      });
+    </script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
